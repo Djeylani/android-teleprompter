@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <com.example.androidteleprompter.TeleprompterView
+        android:id="@+id/teleprompterView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        android:background="#AA000000"
+        android:padding="8dp">
+
+        <SeekBar
+            android:id="@+id/speedControl"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:max="100"
+            android:progress="50"
+            android:progressTint="#FFFFFF"
+            android:thumbTint="#FFFFFF"
+            android:layout_marginEnd="8dp" />
+            
+        <Button
+            android:id="@+id/closeButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="✕"
+            android:textSize="10sp"
+            android:background="@drawable/circle_button"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</FrameLayout>
