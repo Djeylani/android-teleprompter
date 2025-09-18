@@ -1,6 +1,19 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+// Load keystore properties
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+} else {
+    // Fallback values for when keystore.properties doesn't exist
+    keystoreProperties['keyAlias'] = 'my-key-alias'
+    keystoreProperties['keyPassword'] = 'Youngzee14@!'
+    keystoreProperties['storeFile'] = 'my-release-key.keystore'
+    keystoreProperties['storePassword'] = 'Youngzee14@!'
+}
+
 android {
     namespace 'com.example.androidteleprompter'
     compileSdk 34
@@ -9,8 +22,8 @@ android {
         applicationId "com.example.androidteleprompter"
         minSdk 21
         targetSdk 33
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
         
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -18,6 +31,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
