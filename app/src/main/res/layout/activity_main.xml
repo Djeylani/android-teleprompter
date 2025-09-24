@@ -26,6 +26,30 @@
         android:padding="16dp"
         android:layout_marginBottom="16dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        
+        <Button
+            android:id="@+id/saveScriptButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:layout_marginEnd="8dp" />
+            
+        <Button
+            android:id="@+id/loadScriptButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Load"
+            android:layout_marginStart="8dp" />
+            
+    </LinearLayout>
+    
     <Button
         android:id="@+id/startTeleprompterButton"
         android:layout_width="match_parent"
@@ -33,18 +57,34 @@
         android:text="Start Teleprompter"
         android:layout_marginBottom="16dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scroll Speed"
+        android:textColor="@color/black"
+        android:layout_marginBottom="4dp" />
+        
     <SeekBar
         android:id="@+id/speedSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="100"
         android:progress="50"
-        android:layout_marginBottom="8dp" />
-
+        android:layout_marginBottom="16dp" />
+        
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scroll Speed"
-        android:textColor="@color/black" />
+        android:text="Text Size"
+        android:textColor="@color/black"
+        android:layout_marginBottom="4dp" />
+
+    <SeekBar
+        android:id="@+id/textSizeSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="32"
+        android:progress="6"
+        android:layout_marginBottom="8dp" />
 
 </LinearLayout>

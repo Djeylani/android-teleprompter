@@ -97,4 +97,8 @@ class TeleprompterView @JvmOverloads constructor(
     fun setTextContent(text: String) {
         textView.text = text
     }
+    
+    fun setTextSize(size: Float) {
+        textView.textSize = size
+    }
 }

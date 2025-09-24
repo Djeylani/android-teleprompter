@@ -78,9 +78,11 @@ class OverlayService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val script = intent?.getStringExtra("script") ?: "No script provided"
         val speed = intent?.getIntExtra("speed", 50) ?: 50
+        val textSize = intent?.getIntExtra("textSize", 22) ?: 22
         
         teleprompterView.setTextContent(script)
         teleprompterView.setScrollSpeed(speed.toLong())
+        teleprompterView.setTextSize(textSize.toFloat())
         
         // Launch camera without custom output - let camera app handle saving
         val cameraIntent = Intent(MediaStore.ACTION_VIDEO_CAPTURE)

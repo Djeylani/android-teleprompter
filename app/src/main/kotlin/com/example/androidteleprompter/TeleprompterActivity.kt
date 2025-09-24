@@ -23,10 +23,12 @@ class TeleprompterActivity : Activity() {
         
         val script = intent.getStringExtra("script") ?: "No script provided"
         val speed = intent.getIntExtra("speed", 50)
+        val textSize = intent.getIntExtra("textSize", 22)
         
         val serviceIntent = Intent(this, OverlayService::class.java)
         serviceIntent.putExtra("script", script)
         serviceIntent.putExtra("speed", speed)
+        serviceIntent.putExtra("textSize", textSize)
         startService(serviceIntent)
         
         Toast.makeText(this, "Teleprompter overlay started", Toast.LENGTH_SHORT).show()
