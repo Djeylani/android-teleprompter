@@ -25,3 +25,12 @@
 -keep class * implements android.os.Parcelable {
     public static final ** CREATOR;
 }
+# Please add these rules to your existing keep rules in order to suppress warnings.
+# This is generated automatically by the Android Gradle plugin.
+-dontwarn android.window.SplashScreen
+-dontwarn android.window.SplashScreen$OnExitAnimationListener
+-dontwarn android.window.SplashScreenView
+-dontwarn android.window.SplashScreenView$OnExitAnimationListener
+
+# Automatically added from R8 missing_rules.txt to suppress warnings
+-dontwarn javax.lang.model.element.Modifier
